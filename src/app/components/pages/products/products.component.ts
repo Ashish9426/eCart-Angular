@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http'
+import { OrderService } from 'src/app/shared/services/order.service' 
 
 @Component({
   selector: 'app-products',
@@ -11,23 +12,29 @@ export class ProductsComponent implements OnInit {
   faCartPlus=faCartPlus
 
   products:any;
-  constructor(private _httpClient:HttpClient) { 
-
-  }
+  constructor(private _httpClient:HttpClient, private _orderService:OrderService) { }
 
   ngOnInit(): void {
     this.loadProducts()
-
   }
 
+  // static URL method using HttpClient (1st Method)
+  // loadProducts(){
+  //   this._httpClient.get("assets/data/products.json").subscribe((r:any) => {
+  //     console.log(r)
+  //     console.log(typeof r)
+  //     this.products=r;
+  //   })
+  // }
 
+// dynamic URL method using Service (2nd Method)
   loadProducts(){
-    this._httpClient.get("assets/data/products.json").subscribe((r:any) => {
+    this._orderService.GetAllOrders().subscribe(r=>{
       console.log(r)
-      console.log(typeof r)
       this.products=r;
     })
   }
+
 
   addToCart(pid:any,pname:any,price:any){
     

@@ -20,7 +20,7 @@
     
     <div class="cart-body">
 
-      <table class="table">
+      <!-- <table class="table">
         <thead class="thead-light">
             <tr>
                 <th>Item Name</th>
@@ -29,22 +29,22 @@
                 <th>Total Price</th>
                 <th>Action</th>
             </tr>
-        </thead>
+        </thead> -->
 
-        <tbody *ngFor="let item of cart">    
-          <tr>
+        <!-- <tbody >    
+          <tr *ngFor="let item of cart">
               <td>{{item.productName}}</td>
               <td>{{item.productPrice}}</td>
               <td>{{item.productQuantity}}</td>
               <td>{{item.productQuantity*item.productPrice}}</td>
               <td><button class="btn btn-danger">Remove</button></td>
           </tr>
-      </tbody>
-      <tr>
+      </tbody> -->
+      <!-- <tr>
         <td class="text-right font-weight-bold" colspan="5">Total Price : <i class="fas fa-rupee-sign ml-2"></i>{{totalPrice}}</td>
       </tr>
-      </table>
-    </div>
+      </table>-->
+    </div> 
 
   </div>
   <div class="modal-footer">
