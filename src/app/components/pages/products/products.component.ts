@@ -37,7 +37,6 @@ export class ProductsComponent implements OnInit {
 
 
   addToCart(pid:any,pname:any,price:any){
-    
     let cart = localStorage.getItem("cart");
     if(cart == null)
     {
